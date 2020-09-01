@@ -20,22 +20,48 @@ paths:
         '200':
           description: OK
           schema:
-            type:
-              - object
-              - string
+            type: object
             properties:
-              hoge:
-                type: string
               hage:
                 type: string
+                minLength: 1
+                maxLength: 11
+                pattern: '^[A-Z]+'
               dare:
                 type: string
+              id:
+                type: number
+                example: 1213
+                minimum: 1
+                maximum: 10
+                format: float
+                exclusiveMinimum: false
+                exclusiveMaximum: false
+                multipleOf: 10
           examples: {}
+          headers: {}
       operationId: get-a
-      parameters: []
+      parameters:
+        - in: body
+          name: body
+          schema:
+            type: object
+          x-examples: {}
+      description: ''
     parameters:
       - type: string
         name: id
         in: path
         required: true
+  /address:
+    get:
+      summary: a
+      tags: []
+      responses: {}
+      operationId: get-address
+    post:
+      summary: b
+      tags: []
+      responses: {}
+      operationId: post-address
 definitions: {}
