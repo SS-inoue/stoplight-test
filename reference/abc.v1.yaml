@@ -1,0 +1,41 @@
+swagger: '2.0'
+info:
+  title: abc
+  version: '1.0'
+  description: ''
+host: 'localhost:3000'
+schemes:
+  - http
+  - https
+produces:
+  - application/json
+consumes:
+  - application/json
+paths:
+  '/users/{id}':
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type:
+              - object
+              - string
+            properties:
+              hoge:
+                type: string
+              hage:
+                type: string
+              dare:
+                type: string
+          examples: {}
+      operationId: get-a
+      parameters: []
+    parameters:
+      - type: string
+        name: id
+        in: path
+        required: true
+definitions: {}
